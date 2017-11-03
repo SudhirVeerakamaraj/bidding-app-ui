@@ -1,0 +1,44 @@
+<h2 class="mat-h2">Welcome {{userName}},</h2>
+
+<div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center strech">
+  <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
+  <form [formGroup]="userBiddingForm" novalidate>
+    <div>
+      <md-input-container>
+        <input mdInput id="bidValue" formControlName="bidValue" placeholder="Bidding value">
+        <!-- <md-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
+          Please enter a valid email address
+        </md-error> -->
+        <md-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('required')">
+          Bid value is
+          <strong>required</strong>
+        </md-error>
+        <md-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('minlength')">
+          Name should be atleast 2 characters long
+        </md-error>
+      </md-input-container>
+    </div>
+    <div>
+      <button md-raised-button [disabled]="userBiddingForm.invalid" (click)="onBidClick(this.userBiddingForm.controls.bidValue.value)">Bid</button>
+      <!-- routerLink="/join-bid" -->
+    </div>
+  </form>
+</div>
+
+<h3 class="md-line">
+  Here are the bidding details
+</h3>
+<table>
+  <thead>
+    <tr>
+      <td>User Name</td>
+      <td>Bid value</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let bidder of bidders">
+    <tr>
+      <td>{{bidder.name}}</td>
+      <td>{{bidder.bidValue}}</td>
+    </tr>
+  </tbody>
+</table>

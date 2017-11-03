@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center strech">
+  <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
+  <form [formGroup]="userRegisterForm" novalidate>
+    <div>
+      <md-input-container>
+        <input mdInput id="name" formControlName="name" placeholder="First name">
+        <!-- <md-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
+          Please enter a valid email address
+        </md-error> -->
+        <!-- <md-error *ngIf="this.userRegisterForm.controls.name.hasError('required')">
+          Name is <strong>required</strong>
+        </md-error>
+        <md-error *ngIf="this.userRegisterForm.controls.name.hasError('minlength')">
+          Name should be atleast 6 characters long
+        </md-error> -->
+      </md-input-container>
+    </div>
+    <div>
+      <button md-raised-button [disabled]="userRegisterForm.invalid" (click)="onRegisterClick(this.userRegisterForm.controls.name.value)">Take me to bidding</button>
+      <!-- routerLink="/join-bid" -->
+    </div>
+  </form>
+</div>
