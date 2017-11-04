@@ -10,7 +10,7 @@ import { Router } from '@angular/router'
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { MdInputModule, MdGridListModule, MdButtonModule, MdCardModule } from '@angular/material';
+import { MatInputModule, MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { UserDetailService } from '../services/user-detail-services';
 
@@ -35,10 +35,10 @@ fdescribe('UserRegisterComponentComponent', () => {
       ],
       imports: [
         BrowserAnimationsModule,
-        ReactiveFormsModule, FormsModule, MdInputModule,
-        MdGridListModule,
-        MdButtonModule,
-        MdCardModule, FlexLayoutModule]
+        ReactiveFormsModule, FormsModule, MatInputModule,
+        MatGridListModule,
+        MatButtonModule,
+        MatCardModule, FlexLayoutModule]
     })
       .compileComponents();
   }));

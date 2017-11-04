@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MdInputModule, MdGridListModule, MdButtonModule, MdCardModule } from '@angular/material';
+import { MatInputModule, MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -29,10 +29,10 @@ import { BiddingDetailService } from './services/bidding-detail-service';
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     FlexLayoutModule,
-    MdInputModule,
-    MdGridListModule,
-    MdButtonModule,
-    MdCardModule,
+    MatInputModule,
+    MatGridListModule,
+    MatButtonModule,
+    MatCardModule,
     BrowserAnimationsModule
   ],
   providers: [UserDetailService, BiddingDetailService],

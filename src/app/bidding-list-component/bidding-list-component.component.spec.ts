@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 import { ReactiveFormsModule } from '@angular/forms'
 import { FormsModule } from '@angular/forms';
-import { MdInputModule, MdGridListModule, MdButtonModule, MdCardModule } from '@angular/material';
+import { MatInputModule, MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 
@@ -19,10 +19,10 @@ describe('BiddingListComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule, FormsModule, MdInputModule,
-        MdGridListModule,
-        MdButtonModule,
-        MdCardModule, FlexLayoutModule],
+      imports: [ReactiveFormsModule, FormsModule, MatInputModule,
+        MatGridListModule,
+        MatButtonModule,
+        MatCardModule, FlexLayoutModule],
       declarations: [BiddingListComponentComponent]
     })
       .compileComponents();
