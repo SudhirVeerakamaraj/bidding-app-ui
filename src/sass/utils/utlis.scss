@@ -1,0 +1,89 @@
+@import "~sass/utils/variables";
+
+.padding-small {
+    padding: $padding-small;
+}
+
+.padding-medium {
+    padding: $padding-medium;
+}
+
+.padding-large {
+    padding: $padding-large;    
+}
+
+.padding-small-vertical {
+    padding-top:$padding-small;
+    padding-bottom: $padding-small;
+}
+
+.padding-medium-vertical {
+    padding-top:$padding-medium;
+    padding-bottom: $padding-medium;
+}
+
+.padding-large-vertical {
+    padding-top:$padding-large;
+    padding-bottom: $padding-large;
+}
+
+.padding-small-horizontal {
+    padding-right:$padding-small;
+    padding-left: $padding-small;
+}
+
+.padding-medium-horizontal {
+    padding-right:$padding-medium;
+    padding-left: $padding-medium;
+}
+
+.padding-small-top {
+    padding-top:$padding-small;
+}
+
+.padding-medium-top {
+    padding-top:$padding-medium;
+}
+
+.padding-large-top {
+    padding-top:$padding-large;
+}
+
+.padding-small-left {
+    padding-left:$padding-small;
+}
+
+.padding-medium-left {
+    padding-left:$padding-medium;
+}
+
+.padding-large-left {
+    padding-left:$padding-large;
+}
+
+.horizontal-large-divider {
+    padding: 0 $padding-large;
+}
+
+.horizontal-medium-divider {
+    padding: 0 $padding-medium;
+}
+
+.horizontal-small-divider {
+    padding: 0 $padding-small;
+    border: solid 1px #c5beb7;    
+}
+
+
+/* FLEX related styles - start */
+.align-self-flex-start {
+    align-self: flex-start;
+}
+
+/* FLEX related styles - end */
+
+/* ICON related styles - start */ 
+.icon-vertical-middle {
+    vertical-align: middle;
+}
+/* ICON related styles - end */

@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-bidding-list-component',
   templateUrl: './bidding-list-component.component.html',
-  styleUrls: ['./bidding-list-component.component.css']
+  styleUrls: ['./bidding-list-component.component.scss']
 })
 export class BiddingListComponentComponent implements OnInit {
 

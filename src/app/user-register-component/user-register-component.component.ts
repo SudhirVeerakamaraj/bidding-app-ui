@@ -7,7 +7,7 @@ import { UserDetailService } from './../services/user-detail-services'
 @Component({
   selector: 'app-user-register-component',
   templateUrl: './user-register-component.component.html',
-  styleUrls: ['./user-register-component.component.css']
+  styleUrls: ['./user-register-component.component.scss']
 })
 
 export class UserRegisterComponentComponent implements OnInit {

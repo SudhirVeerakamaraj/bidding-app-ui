@@ -1,3 +1,5 @@
+@import "~sass/utils/variables";
+
 .app-heading-bar__content {
     max-width: 1200px;
     margin:auto;
@@ -11,8 +13,8 @@
 .app-container {
     max-width: 1200px;
     margin: auto;
-    padding-top: 30px;
-    padding-bottom: 60px;
+    padding-top: $padding-large;
+    padding-bottom: 2 * $padding-large;
 }
 
 .app-container__banner {
@@ -24,16 +26,16 @@
     flex-flow: row;
     border-top-left-radius:10px;
     border-top-right-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: $padding-medium;
+    padding-left: $padding-medium;
 }
 
 .app-container__view {
     border-bottom-left-radius:10px;
     border-bottom-right-radius: 10px;
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 30px;
+    padding-right: $padding-medium;
+    padding-left: $padding-medium;
+    padding-top: $padding-large;
     border: solid 1px #c5beb7;
     border-top: 0;
     background-color: #fff;
