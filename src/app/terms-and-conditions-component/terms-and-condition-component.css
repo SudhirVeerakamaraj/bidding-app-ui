@@ -1,0 +1,12 @@
+.ts-and-cs__heading {
+    border-bottom: solid 1px #c5beb7; 
+}
+
+.ts-and-cs__list {
+    list-style-type: none;
+    padding: 0;    
+}
+
+.ts-and-cs__list-item {
+    padding-bottom: 10px;
+}

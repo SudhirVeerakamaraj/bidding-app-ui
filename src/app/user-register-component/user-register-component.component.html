@@ -1,23 +1,28 @@
-<div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center strech">
-  <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
-  <form [formGroup]="userRegisterForm" novalidate>
+<form [formGroup]="userRegisterForm" novalidate>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between strech">
+    <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
+
     <div>
-      <md-input-container>
-        <input mdInput id="name" formControlName="name" placeholder="First name">
-        <!-- <md-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
+      <mat-input-container>
+        <input matInput id="name" formControlName="name" placeholder="First name">
+        <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
           Please enter a valid email address
-        </md-error> -->
-        <!-- <md-error *ngIf="this.userRegisterForm.controls.name.hasError('required')">
+        </mat-error> -->
+        <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('required')">
           Name is <strong>required</strong>
-        </md-error>
-        <md-error *ngIf="this.userRegisterForm.controls.name.hasError('minlength')">
+        </mat-error>
+        <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('minlength')">
           Name should be atleast 6 characters long
-        </md-error> -->
-      </md-input-container>
+        </mat-error> -->
+      </mat-input-container>
     </div>
     <div>
-      <button md-raised-button [disabled]="userRegisterForm.invalid" (click)="onRegisterClick(this.userRegisterForm.controls.name.value)">Take me to bidding</button>
+      <button mat-raised-button color="primary" [disabled]="userRegisterForm.invalid" (click)="onRegisterClick(this.userRegisterForm.controls.name.value)">Take me to bidding</button>
       <!-- routerLink="/join-bid" -->
     </div>
-  </form>
-</div>
+
+  </div>
+</form>
+<app-terms-and-conditions-component>
+
+</app-terms-and-conditions-component>
