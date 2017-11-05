@@ -2,11 +2,13 @@
 @import url('~https://fonts.googleapis.com/icon?family=Material+Icons');
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 /* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
-@import './utils/utlis.scss';
+@import '~sass/utils/utlis';
+@import '~sass/typography/typography';
+
 
 body {
     font-family: 'Lato', serif;
-    color:#654a4e;
+    color: #2d373e;
 }
 
 
