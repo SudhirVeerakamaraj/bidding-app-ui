@@ -45,15 +45,22 @@ export class BiddingListComponentComponent implements OnInit {
   private initialiseSubscription() {
     this.biddingDetailService.biddingDataStream().
       subscribe(
-      (biddersFromServer: any[]) => {
-        if (biddersFromServer && biddersFromServer.length > 0) {
-          console.log(`Message received from server is ${biddersFromServer}`);
-          biddersFromServer.forEach((bidderFromServer) => {
-            this.bidders.push({
-              name: bidderFromServer.Name,
-              bidValue: bidderFromServer.Value
+      (biddersFromServer: any) => {
+        if (biddersFromServer) {
+          if (Array.isArray(biddersFromServer) && biddersFromServer.length > 0) {
+            console.log(`Message received from server is ${biddersFromServer}`);
+            biddersFromServer.forEach((bidderFromServer) => {
+              this.bidders.push({
+                name: bidderFromServer.Name,
+                bidValue: bidderFromServer.Value
+              });
             });
-          });
+          } else {
+            this.bidders.push({
+              name: biddersFromServer.Name,
+              bidValue: biddersFromServer.Value
+            });
+          }
         }
       }
 

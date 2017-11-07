@@ -28,7 +28,7 @@ export class BiddingDetailService implements IBiddingDetailService {
         this.startConnection();
     }
 
-    public biddingDataStream(): Observable<any> {
+    public biddingDataStream(): Observable<any[]> {
         return this.biddingDataSource.asObservable();
     }
 
@@ -52,8 +52,9 @@ export class BiddingDetailService implements IBiddingDetailService {
 
     private startConnection(): void {
         this.connection.start().done((existingBidDetails: any) => {
-            console.log("Connection estabilished. Existing bid details are- ", existingBidDetails.data);
-            this.biddingDataSource.next(Object.create(existingBidDetails.data));
+            // console.log("Connection estabilished. Existing bid details are- ", existingBidDetails.data);
+            console.log(`Connection established to hub - ${existingBidDetails.data[0].name}`);
+            // this.biddingDataSource.next(Object.create(existingBidDetails.data));
         }).fail(() => {
             console.log("Connection failed");
         });
@@ -64,7 +65,10 @@ export class BiddingDetailService implements IBiddingDetailService {
         switch (eventName) {
             case EventName.Connected:
             case EventName.Refresh:
-                this.biddingDataSource.next(biddingDetail);
+                this.biddingDataSource.next([...biddingDetail]);
+                break;
+            case EventName.BidPosted:
+                this.biddingDataSource.next(Object.assign({}, biddingDetail));
                 break;
             default:
                 break;
