@@ -1,29 +1,31 @@
 <h2 class="mat-h2">Welcome {{userName}},</h2>
 
-<div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="center strech">
-  <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
-  <form [formGroup]="userBiddingForm" novalidate>
-    <div>
-      <mat-input-container>
-        <input matInput id="bidValue" formControlName="bidValue" placeholder="Bidding value">
-        <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
+<form [formGroup]="userBiddingForm" novalidate>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+    <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
+
+    <mat-input-container>
+      <input matInput id="bidValue" formControlName="bidValue" placeholder="Bidding value">
+      <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
           Please enter a valid email address
         </mat-error> -->
-        <mat-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('required')">
-          Bid value is
-          <strong>required</strong>
-        </mat-error>
-        <mat-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('minlength')">
-          Name should be atleast 2 characters long
-        </mat-error>
-      </mat-input-container>
-    </div>
+      <mat-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('required')">
+        Bid value is
+        <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="this.userBiddingForm.controls.bidValue.hasError('minlength')">
+        Name should be atleast 2 characters long
+      </mat-error>
+    </mat-input-container>
+
     <div>
       <button mat-raised-button color="primary" [disabled]="userBiddingForm.invalid" (click)="onBidClick(this.userBiddingForm.controls.bidValue.value)">Bid</button>
-      <!-- routerLink="/join-bid" -->
     </div>
-  </form>
-</div>
+
+    <!-- routerLink="/join-bid" -->
+
+  </div>
+</form>
 
 <h3 class="mat-line">
   Here are the bidding details
