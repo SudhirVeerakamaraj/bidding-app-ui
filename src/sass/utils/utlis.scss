@@ -1,5 +1,15 @@
 @import "~sass/utils/variables";
 
+.no-padding-vertical {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-padding-horizontal {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 .padding-small {
     padding: $padding-small;
 }

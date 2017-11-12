@@ -28,19 +28,16 @@
 </form>
 
 <h3 class="mat-line">
-  Here are the bidding details
+  Current bids
 </h3>
-<table>
-  <thead>
-    <tr>
-      <td>User Name</td>
-      <td>Bid value</td>
-    </tr>
-  </thead>
-  <tbody *ngFor="let bidder of bidders">
-    <tr>
-      <td>{{bidder.name}}</td>
-      <td>{{bidder.bidValue}}</td>
-    </tr>
-  </tbody>
-</table>
+
+<mat-list>
+  <mat-list-item class="no-padding-horizontal" *ngFor="let bidder of bidders">
+    <!-- <mat-icon matListIcon>folder</mat-icon> -->
+    <i class="material-icons">delete_forever</i>
+    <h4 matLine>{{bidder.name}}</h4>
+    <p matLine>
+      <amount-component [amount]=bidder.bidValue></amount-component>
+    </p>
+  </mat-list-item>
+</mat-list>

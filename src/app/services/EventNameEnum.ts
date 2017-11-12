@@ -1,6 +1,6 @@
 export enum EventName {
-    Connected = "connected",
-    Refresh = "refresh",
+    Connected = "CONNECTED",
+    Refresh = "REFRESH",
     BidPosted = "BID_POSTED",
     BidAsked = "BidAsked",
     LeaveBid = "LeaveBid"

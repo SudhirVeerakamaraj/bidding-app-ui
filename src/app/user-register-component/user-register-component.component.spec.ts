@@ -14,6 +14,7 @@ import { MatInputModule, MatGridListModule, MatButtonModule, MatCardModule } fro
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { UserDetailService } from '../services/user-detail-services';
 
+import { TermsAndConditionsComponent } from "../terms-and-conditions-component/terms-and-conditions-component";
 import { UserRegisterComponentComponent } from './user-register-component.component';
 
 class RouterStub {
@@ -28,7 +29,7 @@ fdescribe('UserRegisterComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [UserRegisterComponentComponent],
+      declarations: [UserRegisterComponentComponent, TermsAndConditionsComponent],
       providers: [
         UserDetailService,
         { provide: Router, useClass: RouterStub }

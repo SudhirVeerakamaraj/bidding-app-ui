@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { MatToolbarModule, MatIconModule, MatInputModule, MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatIconModule, MatInputModule, MatGridListModule, MatButtonModule, MatCardModule, MatListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { BiddingListComponentComponent } from "./bidding-list-component/bidding-list-component.component";
 import { UserRegisterComponentComponent } from "./user-register-component/user-register-component.component";
 import { TermsAndConditionsComponent } from "./terms-and-conditions-component/terms-and-conditions-component";
+import { AmountComponent } from './amount-component/amount-component';
 
 import { UserDetailService } from './services/user-detail-services';
 import { BiddingDetailService } from './services/bidding-detail-service';
@@ -24,7 +25,8 @@ import { BiddingDetailService } from './services/bidding-detail-service';
     AppComponent,
     BiddingListComponentComponent,
     UserRegisterComponentComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    AmountComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { BiddingDetailService } from './services/bidding-detail-service';
     MatGridListModule,
     MatButtonModule,
     MatCardModule,
+    MatListModule,
     BrowserAnimationsModule
   ],
   providers: [UserDetailService, BiddingDetailService],

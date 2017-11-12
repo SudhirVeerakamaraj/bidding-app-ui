@@ -68,7 +68,8 @@ export class BiddingDetailService implements IBiddingDetailService {
                 this.biddingDataSource.next([...biddingDetail]);
                 break;
             case EventName.BidPosted:
-                this.biddingDataSource.next(Object.assign({}, biddingDetail));
+                let biddingDetailAsArray = [biddingDetail]
+                this.biddingDataSource.next([...biddingDetailAsArray]);
                 break;
             default:
                 break;
