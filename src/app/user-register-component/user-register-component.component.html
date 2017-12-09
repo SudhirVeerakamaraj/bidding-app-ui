@@ -2,24 +2,24 @@
   <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="flex-start stretch">
     <!-- <div fxLayout="row" fxFlex="60" fxFlexOffset="15"> -->
 
-    <div>
-      <mat-input-container>
+    <div fxFlex="30" fxFlex.xs="100">
+      <mat-input-container fxFlex.xs="100">
         <input matInput id="name" formControlName="name" placeholder="First name">
         <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('pattern')">
           Please enter a valid email address
         </mat-error> -->
-        <!-- <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('required')">
-          Name is <strong>required</strong>
+        <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('required')">
+          Name is
+          <strong>required</strong>
         </mat-error>
         <mat-error *ngIf="this.userRegisterForm.controls.name.hasError('minlength')">
           Name should be atleast 6 characters long
-        </mat-error> -->
+        </mat-error>
       </mat-input-container>
     </div>
-    <div>
-      <button mat-raised-button color="primary" [disabled]="userRegisterForm.invalid" (click)="onRegisterClick(this.userRegisterForm.controls.name.value)">Take me to bidding</button>
-      <!-- routerLink="/join-bid" -->
-    </div>
+
+    <button fxFlex="30" fxFlex.xs="100" mat-raised-button color="primary" [disabled]="userRegisterForm.invalid" (click)="onRegisterClick(this.userRegisterForm.controls.name.value)">Take me to bidding</button>
+    <!-- routerLink="/join-bid" -->
 
   </div>
 </form>

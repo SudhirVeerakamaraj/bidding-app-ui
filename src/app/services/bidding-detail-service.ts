@@ -18,7 +18,9 @@ export class BiddingDetailService implements IBiddingDetailService {
     private readonly hubName: string = "BiddingHub";
     private biddingDataSource = new BehaviorSubject<any>(null);
 
-    constructor(private http: Http) { }
+    constructor(private http: Http) {
+        // this.checkLocalServerConnection();
+    }
 
 
     public initialiseConnection(): void {
@@ -39,6 +41,11 @@ export class BiddingDetailService implements IBiddingDetailService {
         };
         return this.http.post(ApplicationConfiguration.baseUrl + '/bid/post', JSON.stringify(inputRequest)).toPromise();
     }
+
+    // private checkLocalServerConnection(): void {
+    //     this.http.get("http://localhost:3000/api").subscribe((response) => { console.log(response) });
+    // }
+
     private registerServerEvents(): void {
         this.proxy.on("serverMessage", (serverMessage: string) => {
             this.biddingDataSource.next(serverMessage);
@@ -48,12 +55,13 @@ export class BiddingDetailService implements IBiddingDetailService {
             console.log(`${eventName}: ${biddingDetail}`);
             this.bubbleOutServerEvent(eventName, biddingDetail);
         });
+
     }
 
     private startConnection(): void {
         this.connection.start().done((existingBidDetails: any) => {
             // console.log("Connection estabilished. Existing bid details are- ", existingBidDetails.data);
-            console.log(`Connection established to hub - ${existingBidDetails.data[0].name}`);
+            console.log(`Connection established to hub - ${existingBidDetails.data}`);
             // this.biddingDataSource.next(Object.create(existingBidDetails.data));
         }).fail(() => {
             console.log("Connection failed");

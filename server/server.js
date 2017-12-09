@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const SignalRJs = require('signalrjs');
+const cors = require('cors');
 
 // Get our API routes
 const api = require('./routes/api');
@@ -20,11 +22,32 @@ app.all('*', function (req, res, next) {
     next();
 });
 
+app.use(cors({ credentials: true, origin: 'http://localhost:4200' }));
+
 // Point static path to dist
 // app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
 app.use('/api', api);
+
+// Signalr
+var signalR = SignalRJs();
+signalR.hub('BiddingHub', {
+    CONNECTED: () => {
+        console.log("COMES TO hub CONNECTED");
+        // console.log(signalR.hub('BiddingHub'));
+        // this.clients.all.invoke('onEvent', { eventName: 'sometest' });
+    }
+});
+
+app.use(signalR.createListener());
+
+
+signalR.on('CONNECTED', () => {
+    // signalR.hubs()
+    // signalR.broadcast("You are now connected");
+    // signalR.broadcast({ time: new Date() });
+});
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

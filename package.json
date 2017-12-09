@@ -45,6 +45,7 @@
     "@types/signalr": "^2.2.35",
     "body-parser": "^1.18.2",
     "codelyzer": "~2.0.0-beta.1",
+    "cors": "^2.8.4",
     "expose-loader": "^0.7.3",
     "express": "^4.16.2",
     "jasmine-core": "2.5.2",
@@ -60,6 +61,7 @@
     "nodemon": "^1.12.1",
     "npm-run-all": "^4.1.2",
     "protractor": "~4.0.13",
+    "signalrjs": "^0.2.2",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
     "typescript": "^2.4.0"

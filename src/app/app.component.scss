@@ -40,3 +40,19 @@
     border-top: 0;
     background-color: #fff;
 }
+
+
+@media screen and (max-width:$max-xs) {
+    .app-container {
+        padding: 0;
+    }
+
+    .app-container__banner {
+        border-radius: 0;
+    }
+
+    .app-container__view {
+        border: 0;
+        border-radius: 0;
+    }
+}
