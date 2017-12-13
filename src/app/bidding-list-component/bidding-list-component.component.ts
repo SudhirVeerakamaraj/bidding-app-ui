@@ -5,14 +5,19 @@ import { UserDetailService } from './../services/user-detail-services'
 import { BiddingDetailService } from "./../services/bidding-detail-service";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { NEW_BID_TRANSITION } from './../animation/new-bid-enter-animation/new-bid-enter-animation'
+// import { New } from "./../animation/new-bid-enter-animation";
+
 @Component({
   selector: 'app-bidding-list-component',
   templateUrl: './bidding-list-component.component.html',
-  styleUrls: ['./bidding-list-component.component.scss']
+  styleUrls: ['./bidding-list-component.component.scss'],
+  animations: [NEW_BID_TRANSITION]
 })
 export class BiddingListComponentComponent implements OnInit {
 
   private userBiddingForm: FormGroup;
+
 
   protected userName: string;
   protected bidders: any[] = [];
@@ -52,7 +57,8 @@ export class BiddingListComponentComponent implements OnInit {
             biddersFromServer.forEach((bidderFromServer) => {
               this.bidders.push({
                 name: bidderFromServer.Name,
-                bidValue: bidderFromServer.Value
+                bidValue: bidderFromServer.Value,
+                isNew: bidderFromServer.isNew
               });
             });
           } else {

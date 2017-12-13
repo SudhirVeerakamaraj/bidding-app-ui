@@ -35,7 +35,9 @@
   <mat-list-item class="no-padding-horizontal" *ngFor="let bidder of bidders">
     <!-- <mat-icon matListIcon>folder</mat-icon> -->
     <i class="material-icons">delete_forever</i>
-    <h4 matLine>{{bidder.name}}</h4>
+    <h4 matLine [@newBid] *ngIf="bidder.isNew">{{bidder.name}}
+      <sup>{{bidder.isNew}}</sup>
+    </h4>
     <p matLine>
       <amount-component [amount]=bidder.bidValue></amount-component>
     </p>
