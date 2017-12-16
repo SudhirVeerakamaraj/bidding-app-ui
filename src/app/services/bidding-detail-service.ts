@@ -39,7 +39,7 @@ export class BiddingDetailService implements IBiddingDetailService {
             userName: userName,
             bidValue: bidValue
         };
-        return this.http.post(ApplicationConfiguration.baseUrl + '/bid/post', JSON.stringify(inputRequest)).toPromise();
+        return this.http.post(ApplicationConfiguration.baseUrl + '/bid/post', inputRequest).toPromise();
     }
 
     // private checkLocalServerConnection(): void {
