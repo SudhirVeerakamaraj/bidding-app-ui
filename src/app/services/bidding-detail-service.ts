@@ -73,11 +73,8 @@ export class BiddingDetailService implements IBiddingDetailService {
         switch (eventName) {
             case EventName.Connected:
             case EventName.Refresh:
-                this.biddingDataSource.next([...biddingDetail]);
-                break;
             case EventName.BidPosted:
-                let biddingDetailAsArray = [biddingDetail]
-                this.biddingDataSource.next([...biddingDetailAsArray]);
+                this.biddingDataSource.next([...biddingDetail]);
                 break;
             default:
                 break;

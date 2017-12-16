@@ -54,6 +54,7 @@ export class BiddingListComponentComponent implements OnInit {
         if (biddersFromServer) {
           if (Array.isArray(biddersFromServer) && biddersFromServer.length > 0) {
             console.log(`Message received from server is ${biddersFromServer}`);
+            this.bidders = [];
             biddersFromServer.forEach((bidderFromServer) => {
               this.bidders.push({
                 name: bidderFromServer.Name,
