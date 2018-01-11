@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { EventName } from './EventNameEnum';
 import { Http } from '@angular/http';
+import { RequestOptions } from '@angular/http/src/base_request_options';
 
 
 
@@ -42,6 +43,14 @@ export class BiddingDetailService implements IBiddingDetailService {
         return this.http.post(ApplicationConfiguration.baseUrl + '/bid/post', inputRequest).toPromise();
     }
 
+    public DeleteBid(uniqueId: string): Promise<any> {
+        const inputRequest = {
+            uniqueId: uniqueId
+        };
+
+        return this.http.post(ApplicationConfiguration.baseUrl + '/bid/delete', inputRequest).toPromise();
+    }
+
     // private checkLocalServerConnection(): void {
     //     this.http.get("http://localhost:3000/api").subscribe((response) => { console.log(response) });
     // }
@@ -74,6 +83,7 @@ export class BiddingDetailService implements IBiddingDetailService {
             case EventName.Connected:
             case EventName.Refresh:
             case EventName.BidPosted:
+            case EventName.BidRemoved:
                 this.biddingDataSource.next([...biddingDetail]);
                 break;
             default:

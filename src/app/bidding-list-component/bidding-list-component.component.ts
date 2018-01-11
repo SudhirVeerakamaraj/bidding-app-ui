@@ -39,6 +39,12 @@ export class BiddingListComponentComponent implements OnInit {
     });
   }
 
+  protected onBidDeleteClick(name: string) {
+    this.biddingDetailService.DeleteBid(name).then(() => {
+      console.log("Bid deleted");
+    });
+  }
+
   private validateName(): void {
     if (this.userDetailService.UserName) {
       this.userName = this.userDetailService.UserName;
@@ -57,6 +63,7 @@ export class BiddingListComponentComponent implements OnInit {
             this.bidders = [];
             biddersFromServer.forEach((bidderFromServer) => {
               this.bidders.push({
+                uniqueId: bidderFromServer.UniqueId,
                 name: bidderFromServer.Name,
                 bidValue: bidderFromServer.Value,
                 isNew: bidderFromServer.isNew

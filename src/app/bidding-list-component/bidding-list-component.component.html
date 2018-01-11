@@ -35,7 +35,10 @@
   <mat-list-item class="no-padding-horizontal" *ngFor="let bidder of bidders">
 
     <!-- <mat-icon matListIcon>folder</mat-icon> -->
-    <i class="material-icons">delete_forever</i>
+    <button mat-icon-button>
+      <mat-icon (click)="onBidDeleteClick(bidder.uniqueId)" aria-label="Delete bid">delete_forever</mat-icon>
+    </button>
+    <!-- <i class="material-icons" ></i> -->
     <h4 matLine>
       {{bidder.name}}
     </h4>
